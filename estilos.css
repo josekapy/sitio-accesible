@@ -1,0 +1,241 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fff8fb;
+    color: #444;
+}
+
+/* ================= HEADER ================= */
+
+header {
+    background: linear-gradient(90deg, #f78db6, #ffb3cf);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.flexbox {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    padding: 15px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #0fa7a0;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    padding: 80px 10%;
+    flex-wrap: wrap;
+}
+
+.hero img {
+    width: 350px;
+    max-width: 100%;
+}
+
+.hero-text {
+    max-width: 500px;
+}
+
+.hero-text h2 {
+    font-family: 'Pacifico', cursive;
+    font-size: 4rem;
+    color: #0fa7a0;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 35px;
+    background: #f78db6;
+    color: white;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.btn:hover {
+    background: #0fa7a0;
+    transform: translateY(-3px);
+}
+
+/* ================= SECTION ================= */
+
+section {
+    padding: 70px 10%;
+}
+
+.section-title {
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+    font-size: 3rem;
+    color: #0fa7a0;
+    margin-bottom: 50px;
+}
+
+/* ================= GRID ================= */
+
+.grids {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.grid {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+}
+
+.grid:hover {
+    transform: translateY(-8px);
+}
+
+.grid h3 {
+    color: #f06292;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.grid p {
+    line-height: 1.7;
+}
+
+/* ================= FEATURES ================= */
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 25px;
+    text-align: center;
+}
+
+.feature {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.06);
+}
+
+.feature span {
+    font-size: 3rem;
+}
+
+.feature h4 {
+    margin-top: 15px;
+    color: #0fa7a0;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: linear-gradient(90deg, #0fa7a0, #16c2ba);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 50px;
+}
+
+footer h3 {
+    font-family: 'Pacifico', cursive;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* 1. Ocultamos el checkbox real */
+.oculto {
+    display: none;
+}
+
+.hamburguesa {
+    display: none;
+    background: linear-gradient(90deg, #f78db6, #ffb3cf);
+    align-items: center;
+    gap: 15px;
+}
+
+.hamburguesa img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: fill;
+    border: 1px solid white;    
+}
+
+.hamburguesa h1 {
+    font-family: 'Pacifico', cursive;    
+    color: white;
+    font-size: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@media(max-width:768px) {
+
+    .hamburguesa {
+        display: block;
+    }
+
+    .flexbox {
+        display: none;
+        flex-direction: column;
+    }
+
+    header {
+        display: none;
+    }
+
+    #menu-toggle:checked ~.header ~.flexbox {
+        display: block;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+
+}
