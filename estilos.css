@@ -6,14 +6,14 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: #fff8fb;
+    background: #FFF8FB;
     color: #444;
 }
 
 /* ================= HEADER ================= */
 
 header {
-    background: linear-gradient(90deg, #f78db6, #ffb3cf);
+    background: linear-gradient(90deg, #F78DB6, #FFB3CF);
     padding: 15px 40px;
     display: flex;
     justify-content: space-between;
@@ -23,7 +23,8 @@ header {
 
 .flexbox {
     display: flex;
-    justify-content: space-around;
+    justify-content: end;    
+    background: linear-gradient(90deg, #F78DB6, #FFB3CF);
     gap: 30px;
     padding: 15px;
 }
@@ -42,7 +43,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #0fa7a0;
+    color: #0FA7A0;
 }
 
 /* ================= HERO ================= */
@@ -68,7 +69,7 @@ nav a:hover {
 .hero-text h2 {
     font-family: 'Pacifico', cursive;
     font-size: 4rem;
-    color: #0fa7a0;
+    color: #0FA7A0;
     margin-bottom: 20px;
 }
 
@@ -81,7 +82,7 @@ nav a:hover {
 .btn {
     display: inline-block;
     padding: 15px 35px;
-    background: #f78db6;
+    background: #F78DB6;
     color: white;
     border-radius: 50px;
     text-decoration: none;
@@ -91,7 +92,7 @@ nav a:hover {
 }
 
 .btn:hover {
-    background: #0fa7a0;
+    background: #0FA7A0;
     transform: translateY(-3px);
 }
 
@@ -105,7 +106,7 @@ section {
     text-align: center;
     font-family: 'Pacifico', cursive;
     font-size: 3rem;
-    color: #0fa7a0;
+    color: #0FA7A0;
     margin-bottom: 50px;
 }
 
@@ -131,13 +132,17 @@ section {
 }
 
 .grid h3 {
-    color: #f06292;
+    color: #F06292;
     margin-bottom: 15px;
     font-size: 1.5rem;
 }
 
 .grid p {
     line-height: 1.7;
+}
+
+.grid img {
+    width: 50%;
 }
 
 /* ================= FEATURES ================= */
@@ -150,7 +155,7 @@ section {
 }
 
 .feature {
-    background: #ffffff;
+    background: #FFFFFF;
     padding: 25px;
     border-radius: 20px;
     box-shadow: 0 5px 12px rgba(0, 0, 0, 0.06);
@@ -162,13 +167,13 @@ section {
 
 .feature h4 {
     margin-top: 15px;
-    color: #0fa7a0;
+    color: #0FA7A0;
 }
 
 /* ================= FOOTER ================= */
 
 footer {
-    background: linear-gradient(90deg, #0fa7a0, #16c2ba);
+    background: linear-gradient(90deg, #0FA7A0, #16C2BA);
     color: white;
     text-align: center;
     padding: 40px 20px;
@@ -188,13 +193,14 @@ footer p {
 /* ================= RESPONSIVE ================= */
 
 /* 1. Ocultamos el checkbox real */
-.oculto {
+
+#menu-toggle {
     display: none;
 }
 
 .hamburguesa {
     display: none;
-    background: linear-gradient(90deg, #f78db6, #ffb3cf);
+    background: linear-gradient(90deg, #F7DBb6, #FFB3CF);
     align-items: center;
     gap: 15px;
 }
@@ -204,11 +210,11 @@ footer p {
     height: 40px;
     border-radius: 50%;
     object-fit: fill;
-    border: 1px solid white;    
+    border: 1px solid white;
 }
 
 .hamburguesa h1 {
-    font-family: 'Pacifico', cursive;    
+    font-family: 'Pacifico', cursive;
     color: white;
     font-size: 1rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
@@ -222,20 +228,314 @@ footer p {
 
     .flexbox {
         display: none;
-        flex-direction: column;
+        flex-direction: column;        
     }
 
     header {
         display: none;
     }
 
-    #menu-toggle:checked ~.header ~.flexbox {
-        display: block;
+    #menu-toggle:checked ~.flexbox {
+        display: flex;
     }
 
     .grid {
         grid-template-columns: 1fr;
     }
 
+    .receta-contenido {
+        grid-template-columns: 1fr;
+    }
 
+    .receta-hero {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .receta-hero-emoji {
+        height: 220px;
+        font-size: 6rem;
+    }
+
+    .receta-hero-info h1 {
+        font-size: 2rem;
+    }
+    
+}
+
+/* ================= RECETAS ================= */
+.receta-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.receta-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+.receta-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    background: linear-gradient(135deg, #ffb3cf, #f78db6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+}
+
+.receta-body {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.receta-tag {
+    display: inline-block;
+    background: #FFF0F7;
+    color: #F78DB6;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 50px;
+    margin-bottom: 10px;
+    width: fit-content;
+}
+
+.receta-card h3 {
+    color: #F06292;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.receta-card p {
+    line-height: 1.6;
+    font-size: 0.9rem;
+    color: #666;
+    flex: 1;
+}
+
+.receta-meta {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #FFF0F7;
+}
+
+.receta-meta span {
+    font-size: 0.82rem;
+    color: #aaa;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.receta-meta span b {
+    color: #0FA7A0;
+}
+
+.btn-receta {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 22px;
+    background: #F78DB6;
+    color: white;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.btn-receta:hover {
+    background: #0FA7A0;
+    transform: translateY(-2px);
+}
+
+/* ================= DESTACADO ================= */
+.receta-destacada {
+    background: linear-gradient(135deg, #FFF0F7, #E0FAF9);
+    border-radius: 25px;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+}
+
+.receta-destacada .emoji-grande {
+    font-size: 8rem;
+    line-height: 1;
+}
+
+.receta-destacada img {
+    width: 40%;
+}
+
+.destacada-texto {
+    flex: 1;
+    min-width: 250px;
+}
+
+.destacada-badge {
+    display: inline-block;
+    background: #F78DB6;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 5px 16px;
+    border-radius: 50px;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+}
+
+.destacada-texto h3 {
+    font-family: 'Pacifico', cursive;
+    font-size: 2rem;
+    color: #0FA7A0;
+    margin-bottom: 15px;
+}
+
+.destacada-texto p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.destacada-info span {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.destacada-info span b {
+    color: #0FA7A0;
+}
+
+.pag-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #F78DB6;
+    background: transparent;
+    color: #F78DB6;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.pag-btn:hover,
+.pag-btn.activo {
+    background: #F78DB6;
+    color: white;
+}
+
+/* ================= RECETA ================= */
+.receta-hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 60px;
+    padding: 20px 10% 60px;
+    align-items: center;
+}
+
+.receta-hero h1 {
+    font-family: 'Pacifico', cursive;
+    color: #0FA7A0;
+}
+
+.receta-hero-emoji {
+    background: #16C2BA;
+    border-radius: 30px;
+    height: 150px;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8rem;
+    box-shadow: 0 10px 30px rgba(247, 141, 182, 0.2);
+}
+
+.receta-hero-info {
+    display: inline-block;
+    background: #fff0f7;
+    color: #f78db6;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 5px 16px;
+    border-radius: 50px;
+    margin-bottom: 15px;
+}
+
+
+/* ================= LAYOUT PRINCIPAL ================= */
+.receta-contenido {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 50px;
+    padding: 0 10% 80px;
+    align-items: start;
+}
+
+/* ================= INGREDIENTES (sidebar) ================= */
+.sidebar-card {
+    background: white;
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+    position: sticky;
+    top: 30px;
+}
+
+.ingrediente-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px dashed #ffe0ef;
+    font-size: 0.92rem;
+}
+
+/* ================= PASO A PASO ================= */
+.pasos-titulo {
+    font-family: 'Pacifico', cursive;
+    font-size: 2rem;
+    color: #0fa7a0;
+    margin-bottom: 35px;
+}
+
+.paso {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 35px;
+    align-items: flex-start;
+}
+
+.paso-contenido {
+    flex: 1;
+    background: white;
+    border-radius: 18px;
+    padding: 22px 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    line-height: 1.8;
+    color: #555;
+    position: relative;
+}
+
+.paso-contenido h4 {
+    color: #f06292;
+    font-size: 1rem;
+    margin-bottom: 8px;
 }
